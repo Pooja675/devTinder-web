@@ -22,7 +22,7 @@
 - Refactor our file create constant file and component folder
 - You shuold not be allowed to access other routes without login
 - If token is not present, redirect to login page 
-
+- Logout feature
 
 Body
     NavBar
