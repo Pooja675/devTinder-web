@@ -10,11 +10,15 @@ const Connections = () => {
   const dispatch = useDispatch();
 
   const fetchConnections = async () => {
-    const res = await axios.get(BASE_URL + "/user/connections", {
-      withCredentials: true,
-    });
-    //console.log(res.data.data);
-    dispatch(addConnections(res.data.data));
+    try {
+      const res = await axios.get(BASE_URL + "/user/connections", {
+        withCredentials: true,
+      });
+      //console.log(res.data.data);
+      dispatch(addConnections(res.data.data));
+    } catch (error) {
+        //hadle error case
+    }
   };
 
   useEffect(() => {
@@ -30,11 +34,11 @@ const Connections = () => {
       <h1 className="font-bold text-2xl">Connections</h1>
 
       {connections.map((connection) => {
-        const { firstName, lastName, photoUrl, age, gender, about } =
+        const {_id, firstName, lastName, photoUrl, age, gender, about } =
           connection;
 
         return (
-          <div className="flex  m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto">
+          <div key={_id} className="flex  m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto">
             <div>
               <img
                 alt="photo"

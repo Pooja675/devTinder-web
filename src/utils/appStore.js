@@ -6,12 +6,15 @@ import feedReducer from "./feedSlice"
 
 import connectionReducer from "./connectionSlice"
 
+import requestReducer from "./requestSLice"
+
 const appStore = configureStore({
 
     reducer: {
         user: userReducer,
         feed: feedReducer,
         connections: connectionReducer,
+        requests: requestReducer,
 
 
     }
