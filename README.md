@@ -43,3 +43,11 @@ Body
     Route=/login  ==> Login
     Route=/connections ==> Connections
     Route=/profile ==> Profile
+
+
+# Deplyement
+    - SignUp on AWS
+    - Launch intance
+    - chmod 400 <secret>.pem
+    - ssh -i "devTinder555.pem" ubuntu@ec2-15-207-20-95.ap-south-1.compute.amazonaws.com --- connect to the instance
+    - install node version 22.12.0
